@@ -78,4 +78,4 @@ If you use AGENTRIM in your research, please cite:
 
 ## License
 
-AGENTRIM is available for noncommercial use. Third-party software and assets remain subject to their respective licenses.
+AgenTRIM is available for noncommercial use. Third-party software and assets remain subject to their respective licenses.
