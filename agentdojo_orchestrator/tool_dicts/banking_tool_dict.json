@@ -1,0 +1,551 @@
+{
+  "get_iban": {
+    "name": "get_iban",
+    "description": "Get the IBAN of the current bank account.",
+    "inputs": {
+      "fields": [],
+      "schema": {
+        "properties": {},
+        "title": "Input schema for `get_iban`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "send_money": {
+    "name": "send_money",
+    "description": "Sends a transaction to the recipient.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "recipient",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "IBAN of the recipient"
+        },
+        {
+          "name": "amount",
+          "type": "float",
+          "required": true,
+          "default": null,
+          "description": "Amount of the transaction"
+        },
+        {
+          "name": "subject",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Subject of the transaction"
+        },
+        {
+          "name": "date",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Date of the transaction"
+        }
+      ],
+      "schema": {
+        "properties": {
+          "recipient": {
+            "description": "IBAN of the recipient",
+            "title": "Recipient",
+            "type": "string"
+          },
+          "amount": {
+            "description": "Amount of the transaction",
+            "title": "Amount",
+            "type": "number"
+          },
+          "subject": {
+            "description": "Subject of the transaction",
+            "title": "Subject",
+            "type": "string"
+          },
+          "date": {
+            "description": "Date of the transaction",
+            "title": "Date",
+            "type": "string"
+          }
+        },
+        "required": [
+          "recipient",
+          "amount",
+          "subject",
+          "date"
+        ],
+        "title": "Input schema for `send_money`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "schedule_transaction": {
+    "name": "schedule_transaction",
+    "description": "Schedule a transaction.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "recipient",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "IBAN of the recipient"
+        },
+        {
+          "name": "amount",
+          "type": "float",
+          "required": true,
+          "default": null,
+          "description": "Amount of the transaction"
+        },
+        {
+          "name": "subject",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Subject of the transaction"
+        },
+        {
+          "name": "date",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Next date of the transaction"
+        },
+        {
+          "name": "recurring",
+          "type": "bool",
+          "required": true,
+          "default": null,
+          "description": "Is the transaction recurring"
+        }
+      ],
+      "schema": {
+        "properties": {
+          "recipient": {
+            "description": "IBAN of the recipient",
+            "title": "Recipient",
+            "type": "string"
+          },
+          "amount": {
+            "description": "Amount of the transaction",
+            "title": "Amount",
+            "type": "number"
+          },
+          "subject": {
+            "description": "Subject of the transaction",
+            "title": "Subject",
+            "type": "string"
+          },
+          "date": {
+            "description": "Next date of the transaction",
+            "title": "Date",
+            "type": "string"
+          },
+          "recurring": {
+            "description": "Is the transaction recurring",
+            "title": "Recurring",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "recipient",
+          "amount",
+          "subject",
+          "date",
+          "recurring"
+        ],
+        "title": "Input schema for `schedule_transaction`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "update_scheduled_transaction": {
+    "name": "update_scheduled_transaction",
+    "description": "Update a scheduled transaction.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "id",
+          "type": "int",
+          "required": true,
+          "default": null,
+          "description": "ID of the transaction (mandatory)"
+        },
+        {
+          "name": "recipient",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "IBAN of the recipient (optional)"
+        },
+        {
+          "name": "amount",
+          "type": "float | None",
+          "required": false,
+          "default": null,
+          "description": "Amount of the transaction (optional)"
+        },
+        {
+          "name": "subject",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "Subject of the transaction (optional)"
+        },
+        {
+          "name": "date",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "Next date of the transaction (optional)"
+        },
+        {
+          "name": "recurring",
+          "type": "bool | None",
+          "required": false,
+          "default": null,
+          "description": "Is the transaction recurring (optional)"
+        }
+      ],
+      "schema": {
+        "properties": {
+          "id": {
+            "description": "ID of the transaction (mandatory)",
+            "title": "Id",
+            "type": "integer"
+          },
+          "recipient": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "IBAN of the recipient (optional)",
+            "title": "Recipient"
+          },
+          "amount": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Amount of the transaction (optional)",
+            "title": "Amount"
+          },
+          "subject": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Subject of the transaction (optional)",
+            "title": "Subject"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Next date of the transaction (optional)",
+            "title": "Date"
+          },
+          "recurring": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Is the transaction recurring (optional)",
+            "title": "Recurring"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "Input schema for `update_scheduled_transaction`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_balance": {
+    "name": "get_balance",
+    "description": "Get the balance of the account.",
+    "inputs": {
+      "fields": [],
+      "schema": {
+        "properties": {},
+        "title": "Input schema for `get_balance`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_most_recent_transactions": {
+    "name": "get_most_recent_transactions",
+    "description": "Get the list of the most recent transactions, e.g. to summarize the last n transactions.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "n",
+          "type": "int",
+          "required": false,
+          "default": 100,
+          "description": "Number of transactions to return"
+        }
+      ],
+      "schema": {
+        "properties": {
+          "n": {
+            "default": 100,
+            "description": "Number of transactions to return",
+            "title": "N",
+            "type": "integer"
+          }
+        },
+        "title": "Input schema for `get_most_recent_transactions`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_scheduled_transactions": {
+    "name": "get_scheduled_transactions",
+    "description": "Get the list of scheduled transactions.",
+    "inputs": {
+      "fields": [],
+      "schema": {
+        "properties": {},
+        "title": "Input schema for `get_scheduled_transactions`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "read_file": {
+    "name": "read_file",
+    "description": "Reads the contents of the file at the given path.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "file_path",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The path to the file to read."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "file_path": {
+            "description": "The path to the file to read.",
+            "title": "File Path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ],
+        "title": "Input schema for `read_file`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_user_info": {
+    "name": "get_user_info",
+    "description": "Get the user information.",
+    "inputs": {
+      "fields": [],
+      "schema": {
+        "properties": {},
+        "title": "Input schema for `get_user_info`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "update_password": {
+    "name": "update_password",
+    "description": "Update the user password.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "password",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "New password for the user"
+        }
+      ],
+      "schema": {
+        "properties": {
+          "password": {
+            "description": "New password for the user",
+            "title": "Password",
+            "type": "string"
+          }
+        },
+        "required": [
+          "password"
+        ],
+        "title": "Input schema for `update_password`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "update_user_info": {
+    "name": "update_user_info",
+    "description": "Update the user information.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "first_name",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "First name of the user (optional)"
+        },
+        {
+          "name": "last_name",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "Last name of the user (optional)"
+        },
+        {
+          "name": "street",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "Street of the user (optional)"
+        },
+        {
+          "name": "city",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "City of the user (optional)"
+        }
+      ],
+      "schema": {
+        "properties": {
+          "first_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "First name of the user (optional)",
+            "title": "First Name"
+          },
+          "last_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Last name of the user (optional)",
+            "title": "Last Name"
+          },
+          "street": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "Street of the user (optional)",
+            "title": "Street"
+          },
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "City of the user (optional)",
+            "title": "City"
+          }
+        },
+        "title": "Input schema for `update_user_info`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "math": {
+        "command": "python",
+        "args": ["tool_files/math_server.py"],
+        "transport": "stdio"
+    },
+    "basic_tools": {
+        "command": "python",
+        "args": ["tool_files/mcp_basic_tools.py"],
+        "transport": "stdio"
+    },
+    "sql_tools":{
+        "command": "python",
+        "args": ["tool_files/mcp_sql_server.py"],
+        "transport": "stdio"
+    }
+}
+    

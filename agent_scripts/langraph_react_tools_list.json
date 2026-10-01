@@ -1,0 +1,22 @@
+[
+  "gmail_list_tool",
+  "gmail_delete_tool",
+  "gmail_send_tool",
+  "gmail_read_tool",
+  "screenshot_tool",
+  "calculator_tool",
+  "pdf_metadata_tool",
+  "pdf_summary_tool",
+  "imagegen_tool",
+  "hash_tool",
+  "random_tool",
+  "fibonacci_number",
+  "fast_fourier_transform",
+  "modular_exponentiation",
+  "integer_factorization",
+  "definite_integral",
+  "search_web_search",
+  "wiki_wiki_scrape",
+  "execute_read_query",
+  "execute_read_write_query"
+]

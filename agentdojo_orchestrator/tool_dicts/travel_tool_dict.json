@@ -1,0 +1,1237 @@
+{
+  "get_user_information": {
+    "name": "get_user_information",
+    "description": "Get the user information, could be: first name, last name, ID number, email, phone number, address, passport number, bank account number, credit card number. These information are used for booking hotels, restaurants, car rentals, and flights.",
+    "inputs": {
+      "fields": [],
+      "schema": {
+        "properties": {},
+        "title": "Input schema for `get_user_information`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_all_hotels_in_city": {
+    "name": "get_all_hotels_in_city",
+    "description": "Get all hotels in the given city.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "city",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The city to get hotels from."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "city": {
+            "description": "The city to get hotels from.",
+            "title": "City",
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ],
+        "title": "Input schema for `get_all_hotels_in_city`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_hotels_prices": {
+    "name": "get_hotels_prices",
+    "description": "Get all hotels within the given budget, should be within the price range.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "hotel_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the hotel to get the price range for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "hotel_names": {
+            "description": "The name of the hotel to get the price range for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Hotel Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "hotel_names"
+        ],
+        "title": "Input schema for `get_hotels_prices`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_rating_reviews_for_hotels": {
+    "name": "get_rating_reviews_for_hotels",
+    "description": "Get the rating and reviews for the given hotels.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "hotel_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The names of the hotels to get reviews for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "hotel_names": {
+            "description": "The names of the hotels to get reviews for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Hotel Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "hotel_names"
+        ],
+        "title": "Input schema for `get_rating_reviews_for_hotels`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_hotels_address": {
+    "name": "get_hotels_address",
+    "description": "Get the address of the given hotel.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "hotel_name",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The name of the hotel to get the address for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "hotel_name": {
+            "description": "The name of the hotel to get the address for.",
+            "title": "Hotel Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "hotel_name"
+        ],
+        "title": "Input schema for `get_hotels_address`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_all_restaurants_in_city": {
+    "name": "get_all_restaurants_in_city",
+    "description": "Get all restaurants in the given city.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "city",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The city to get restaurants from."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "city": {
+            "description": "The city to get restaurants from.",
+            "title": "City",
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ],
+        "title": "Input schema for `get_all_restaurants_in_city`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_cuisine_type_for_restaurants": {
+    "name": "get_cuisine_type_for_restaurants",
+    "description": "Get the cuisine type of the given restaurants, could be: Italian, Chinese, Indian, Japanese.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of restaurants to get the cuisine type for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The name of restaurants to get the cuisine type for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `get_cuisine_type_for_restaurants`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_restaurants_address": {
+    "name": "get_restaurants_address",
+    "description": "Get the address of the given restaurants.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the restaurant to get the address for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The name of the restaurant to get the address for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `get_restaurants_address`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_rating_reviews_for_restaurants": {
+    "name": "get_rating_reviews_for_restaurants",
+    "description": "Get the rating and reviews for the given restaurants.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The names of the restaurants to get reviews for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The names of the restaurants to get reviews for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `get_rating_reviews_for_restaurants`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_dietary_restrictions_for_all_restaurants": {
+    "name": "get_dietary_restrictions_for_all_restaurants",
+    "description": "Get the dietary restrictions of the given restaurants, could be: Vegetarian, Vegan, Gluten-free, Dairy-free.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the restaurant to get the dietary restrictions for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The name of the restaurant to get the dietary restrictions for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `get_dietary_restrictions_for_all_restaurants`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_contact_information_for_restaurants": {
+    "name": "get_contact_information_for_restaurants",
+    "description": "Get the contact information of the given restaurants.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the restaurant to get the contact information for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The name of the restaurant to get the contact information for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `get_contact_information_for_restaurants`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_price_for_restaurants": {
+    "name": "get_price_for_restaurants",
+    "description": "Get the price per person of the given restaurants.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the restaurant to get the price per person for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The name of the restaurant to get the price per person for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `get_price_for_restaurants`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "check_restaurant_opening_hours": {
+    "name": "check_restaurant_opening_hours",
+    "description": "Get the openning hours of the given restaurants, check if the restaurant is open.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant_names",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the restaurant to get the operating hours for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant_names": {
+            "description": "The name of the restaurant to get the operating hours for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Restaurant Names",
+            "type": "array"
+          }
+        },
+        "required": [
+          "restaurant_names"
+        ],
+        "title": "Input schema for `check_restaurant_opening_hours`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_all_car_rental_companies_in_city": {
+    "name": "get_all_car_rental_companies_in_city",
+    "description": "Get all car rental companies in the given city.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "city",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The city to get car rental companies from."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "city": {
+            "description": "The city to get car rental companies from.",
+            "title": "City",
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ],
+        "title": "Input schema for `get_all_car_rental_companies_in_city`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_car_types_available": {
+    "name": "get_car_types_available",
+    "description": "Get the car types available for the given car rental companies.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "company_name",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the car rental company to get the car types available for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "company_name": {
+            "description": "The name of the car rental company to get the car types available for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Company Name",
+            "type": "array"
+          }
+        },
+        "required": [
+          "company_name"
+        ],
+        "title": "Input schema for `get_car_types_available`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_rating_reviews_for_car_rental": {
+    "name": "get_rating_reviews_for_car_rental",
+    "description": "Get the rating and reviews for the given car rental companies.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "company_name",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the car rental company to get reviews for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "company_name": {
+            "description": "The name of the car rental company to get reviews for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Company Name",
+            "type": "array"
+          }
+        },
+        "required": [
+          "company_name"
+        ],
+        "title": "Input schema for `get_rating_reviews_for_car_rental`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_car_fuel_options": {
+    "name": "get_car_fuel_options",
+    "description": "Get the fuel options of the given car rental companies.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "company_name",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the car rental company to get the fuel options for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "company_name": {
+            "description": "The name of the car rental company to get the fuel options for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Company Name",
+            "type": "array"
+          }
+        },
+        "required": [
+          "company_name"
+        ],
+        "title": "Input schema for `get_car_fuel_options`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_car_rental_address": {
+    "name": "get_car_rental_address",
+    "description": "Get the address of the given car rental companies.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "company_name",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the car rental company to get the address for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "company_name": {
+            "description": "The name of the car rental company to get the address for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Company Name",
+            "type": "array"
+          }
+        },
+        "required": [
+          "company_name"
+        ],
+        "title": "Input schema for `get_car_rental_address`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_car_price_per_day": {
+    "name": "get_car_price_per_day",
+    "description": "Get the price per day of the given car rental companies.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "company_name",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The name of the car rental company to get the price per day for."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "company_name": {
+            "description": "The name of the car rental company to get the price per day for.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Company Name",
+            "type": "array"
+          }
+        },
+        "required": [
+          "company_name"
+        ],
+        "title": "Input schema for `get_car_price_per_day`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "create_calendar_event": {
+    "name": "create_calendar_event",
+    "description": "Creates a new calendar event with the given details and adds it to the calendar.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "title",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The title of the event."
+        },
+        {
+          "name": "start_time",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The start time of the event. Must be in format YYYY-MM-DD HH:MM."
+        },
+        {
+          "name": "end_time",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The end time of the event. Must be in format YYYY-MM-DD HH:MM."
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "required": false,
+          "default": "",
+          "description": "The description of the event."
+        },
+        {
+          "name": "participants",
+          "type": "list[str] | None",
+          "required": false,
+          "default": null,
+          "description": "The list of participants' email addresses. If `null`, no participants are set. The calendar owner's email address is always included.."
+        },
+        {
+          "name": "location",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "The location of the event. If `null`, no location is set."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "title": {
+            "description": "The title of the event.",
+            "title": "Title",
+            "type": "string"
+          },
+          "start_time": {
+            "description": "The start time of the event. Must be in format YYYY-MM-DD HH:MM.",
+            "title": "Start Time",
+            "type": "string"
+          },
+          "end_time": {
+            "description": "The end time of the event. Must be in format YYYY-MM-DD HH:MM.",
+            "title": "End Time",
+            "type": "string"
+          },
+          "description": {
+            "default": "",
+            "description": "The description of the event.",
+            "title": "Description",
+            "type": "string"
+          },
+          "participants": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The list of participants' email addresses. If `null`, no participants are set. The calendar owner's email address is always included..",
+            "title": "Participants"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The location of the event. If `null`, no location is set.",
+            "title": "Location"
+          }
+        },
+        "required": [
+          "title",
+          "start_time",
+          "end_time"
+        ],
+        "title": "Input schema for `create_calendar_event`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "search_calendar_events": {
+    "name": "search_calendar_events",
+    "description": "Searches calendar events that match the given query in the tile or the description. If provided, filters events by date.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "query",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The query string to search for in event titles and descriptions."
+        },
+        {
+          "name": "date",
+          "type": "str | None",
+          "required": false,
+          "default": null,
+          "description": "The date for which to search events. Must be in format YYYY-MM-DD. If `null`, searches all events."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "query": {
+            "description": "The query string to search for in event titles and descriptions.",
+            "title": "Query",
+            "type": "string"
+          },
+          "date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The date for which to search events. Must be in format YYYY-MM-DD. If `null`, searches all events.",
+            "title": "Date"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "title": "Input schema for `search_calendar_events`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_day_calendar_events": {
+    "name": "get_day_calendar_events",
+    "description": "Returns the appointments for the given `day`. Returns a list of dictionaries with informations about each meeting.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "day",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The day for which to return the appointments. Must be in format YYYY-MM-DD."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "day": {
+            "description": "The day for which to return the appointments. Must be in format YYYY-MM-DD.",
+            "title": "Day",
+            "type": "string"
+          }
+        },
+        "required": [
+          "day"
+        ],
+        "title": "Input schema for `get_day_calendar_events`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "cancel_calendar_event": {
+    "name": "cancel_calendar_event",
+    "description": "Cancels the event with the given `event_id`. The event will be marked as canceled and no longer appear in the calendar.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "event_id",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The ID of the event to cancel."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "event_id": {
+            "description": "The ID of the event to cancel.",
+            "title": "Event Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "event_id"
+        ],
+        "title": "Input schema for `cancel_calendar_event`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "reserve_hotel": {
+    "name": "reserve_hotel",
+    "description": "Makes a reservation for a hotel with the provided details..",
+    "inputs": {
+      "fields": [
+        {
+          "name": "hotel",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Where the reservation is made. It must only be the name of the hotel."
+        },
+        {
+          "name": "start_day",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The check-in day for the hotel. Should be in ISO format 'YYYY-MM-DD'."
+        },
+        {
+          "name": "end_day",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The check-out day for the hotel. Should be in ISO format 'YYYY-MM-DD'."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "hotel": {
+            "description": "Where the reservation is made. It must only be the name of the hotel.",
+            "title": "Hotel",
+            "type": "string"
+          },
+          "start_day": {
+            "description": "The check-in day for the hotel. Should be in ISO format 'YYYY-MM-DD'.",
+            "title": "Start Day",
+            "type": "string"
+          },
+          "end_day": {
+            "description": "The check-out day for the hotel. Should be in ISO format 'YYYY-MM-DD'.",
+            "title": "End Day",
+            "type": "string"
+          }
+        },
+        "required": [
+          "hotel",
+          "start_day",
+          "end_day"
+        ],
+        "title": "Input schema for `reserve_hotel`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "reserve_car_rental": {
+    "name": "reserve_car_rental",
+    "description": "Makes a reservation for a car rental with the provided details.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "company",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Where the reservation is made. It must only be the name of the car rental company."
+        },
+        {
+          "name": "start_time",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The reservation starting time. Should be in ISO format 'YYYY-MM-DD HH:MM'."
+        },
+        {
+          "name": "end_time",
+          "type": "str | None",
+          "required": true,
+          "default": null,
+          "description": "The reservation end time. Should be in ISO format 'YYYY-MM-DD HH:MM'."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "company": {
+            "description": "Where the reservation is made. It must only be the name of the car rental company.",
+            "title": "Company",
+            "type": "string"
+          },
+          "start_time": {
+            "description": "The reservation starting time. Should be in ISO format 'YYYY-MM-DD HH:MM'.",
+            "title": "Start Time",
+            "type": "string"
+          },
+          "end_time": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The reservation end time. Should be in ISO format 'YYYY-MM-DD HH:MM'.",
+            "title": "End Time"
+          }
+        },
+        "required": [
+          "company",
+          "start_time",
+          "end_time"
+        ],
+        "title": "Input schema for `reserve_car_rental`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "reserve_restaurant": {
+    "name": "reserve_restaurant",
+    "description": "Makes a reservation for a restaurant with the provided details.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "restaurant",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "Where the reservation is made. It must only be the name of the restaurant."
+        },
+        {
+          "name": "start_time",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The reservation time. Should be in ISO format 'YYYY-MM-DD HH:MM'.\nThe end time is automatically set to be two hours after the start of the reservation."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "restaurant": {
+            "description": "Where the reservation is made. It must only be the name of the restaurant.",
+            "title": "Restaurant",
+            "type": "string"
+          },
+          "start_time": {
+            "description": "The reservation time. Should be in ISO format 'YYYY-MM-DD HH:MM'.\nThe end time is automatically set to be two hours after the start of the reservation.",
+            "title": "Start Time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "restaurant",
+          "start_time"
+        ],
+        "title": "Input schema for `reserve_restaurant`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "get_flight_information": {
+    "name": "get_flight_information",
+    "description": "Get the flight information from the departure city to the arrival city.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "departure_city",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The city to depart from."
+        },
+        {
+          "name": "arrival_city",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The city to arrive at."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "departure_city": {
+            "description": "The city to depart from.",
+            "title": "Departure City",
+            "type": "string"
+          },
+          "arrival_city": {
+            "description": "The city to arrive at.",
+            "title": "Arrival City",
+            "type": "string"
+          }
+        },
+        "required": [
+          "departure_city",
+          "arrival_city"
+        ],
+        "title": "Input schema for `get_flight_information`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  },
+  "send_email": {
+    "name": "send_email",
+    "description": "Sends an email with the given `body` to the given `address`. Returns a dictionary with the email details.",
+    "inputs": {
+      "fields": [
+        {
+          "name": "recipients",
+          "type": "list",
+          "required": true,
+          "default": null,
+          "description": "The list with the email addresses of the recipients."
+        },
+        {
+          "name": "subject",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The subject of the email."
+        },
+        {
+          "name": "body",
+          "type": "str",
+          "required": true,
+          "default": null,
+          "description": "The body of the email."
+        },
+        {
+          "name": "attachments",
+          "type": "list[dict] | None",
+          "required": false,
+          "default": null,
+          "description": "The list of attachments to include in the email. If `null`, no attachments are included.\nIf the attachment has as \"type\" \"file\", then it is expected to have a field \"file_id\", with the ID of the file in the\ncloud drive. If the attachment has as \"type\" \"event\", then it is expected to be a calendar event in the field \"event_details\".\nA calendar event has the following fields: `title`, `description`, `start_time` (in ISO format), `end_time`\n(in ISO format), `location`, and participants (a list of emails)."
+        },
+        {
+          "name": "cc",
+          "type": "list[str] | None",
+          "required": false,
+          "default": null,
+          "description": "The list of email addresses to include in the CC field. If `null`, no email addresses are included."
+        },
+        {
+          "name": "bcc",
+          "type": "list[str] | None",
+          "required": false,
+          "default": null,
+          "description": "The list of email addresses to include in the BCC field. If `null`, no email addresses are included."
+        }
+      ],
+      "schema": {
+        "properties": {
+          "recipients": {
+            "description": "The list with the email addresses of the recipients.",
+            "items": {
+              "type": "string"
+            },
+            "title": "Recipients",
+            "type": "array"
+          },
+          "subject": {
+            "description": "The subject of the email.",
+            "title": "Subject",
+            "type": "string"
+          },
+          "body": {
+            "description": "The body of the email.",
+            "title": "Body",
+            "type": "string"
+          },
+          "attachments": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The list of attachments to include in the email. If `null`, no attachments are included.\nIf the attachment has as \"type\" \"file\", then it is expected to have a field \"file_id\", with the ID of the file in the\ncloud drive. If the attachment has as \"type\" \"event\", then it is expected to be a calendar event in the field \"event_details\".\nA calendar event has the following fields: `title`, `description`, `start_time` (in ISO format), `end_time`\n(in ISO format), `location`, and participants (a list of emails).",
+            "title": "Attachments"
+          },
+          "cc": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The list of email addresses to include in the CC field. If `null`, no email addresses are included.",
+            "title": "Cc"
+          },
+          "bcc": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The list of email addresses to include in the BCC field. If `null`, no email addresses are included.",
+            "title": "Bcc"
+          }
+        },
+        "required": [
+          "recipients",
+          "subject",
+          "body"
+        ],
+        "title": "Input schema for `send_email`",
+        "type": "object"
+      }
+    },
+    "outputs": {
+      "fields": null,
+      "schema": "None"
+    }
+  }
+}
