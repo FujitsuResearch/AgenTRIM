@@ -2,7 +2,7 @@
 
 Official implementation of **AGENTRIM**, accepted to **Findings of EMNLP 2026**.
 
-[[Paper (arXiv)]](https://arxiv.org/pdf/2601.12449)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b.svg)](https://arxiv.org/pdf/2601.12449)
 
 ![AGENTRIM overview](repo_image.png)
 
