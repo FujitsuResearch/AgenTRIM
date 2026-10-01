@@ -71,7 +71,7 @@ If you use AGENTRIM in your research, please cite:
 @inproceedings{betser2026agentrim,
   title={Agentrim: Tool risk mitigation for agentic ai},
   author={Betser, Roy and Giloni, Amit and Bose, Shamik and Padakandla, Sindhu and Picardi, Chiara and Erez, Lidor and Vainshtein, Roman},
-  booktitle={Findings of the Association for Computational Linguistics: EMNLP 2026},
+  booktitle={EMNLP 2026 (Findings)},
   year={2026}
 }
 ```
