@@ -1,6 +1,6 @@
 # AGENTRIM Official Code
 
-Official implementation of **AGENTRIM**, accepted to **Findings of EMNLP 2026**.
+Official implementation of **AgenTRIM**, accepted to **Findings of EMNLP 2026**.
 
 [![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b.svg)](https://arxiv.org/pdf/2601.12449)
 
